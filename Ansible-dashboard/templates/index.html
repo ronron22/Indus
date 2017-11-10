@@ -1,0 +1,59 @@
+{% include 'header.html' %}
+{% include 'menu.html' %}
+
+    <div class="container">
+      <div class="starter-template">
+
+<h2>projet d'installation automatique</h2>
+
+<ol>
+<li><a href="http://gitlab.host.net/installs/ansible">Ansible</a></li>
+<li><a href="http://gitlab.host.net/installs/configurations-repo">Dépôt de configuration</a></li>
+<li><a href="http://gitlab.host.net/installs/foreman">Foreman</a></li>
+<li><a href="http://gitlab.host.net/installs/provisionnement-automatique">Provisionnemen auto(PoC)</a></li>
+</ol>
+
+<h2>Statistique</h2>
+
+<h3>Paipy stats</h3> 
+
+    {% if paipy_camenbert and delete_list or deferred_list %}
+    <img src="{{ paipy_camenbert }}" /> 
+    {% endif %}
+
+<p>Total des serveur installés sans erreurs: {{ count_paipy_delete_host }}</p>
+
+<p>Les cinq derniers serveur installés sans erreurs:</p>
+{% if delete_list %}
+{% for host in delete_list[:5] %}
+<ul>
+  <li>{{ host }}</li>
+</ul>
+{% endfor %}
+<br />
+{% endif  %} 
+
+<p>Total des serveurs avec erreurs (côté paipy) : {{ count_paipy_deferred_host }} </p>
+
+<p>Les cinq derniers serveurs avec erreurs (côté paipy):</p>
+{% if deferred_list %}
+{% for host in deferred_list[:5] %}
+<ul>
+  <li>{{ host }}</li>
+</ul>
+{% endfor %}
+{% endif  %} 
+
+<h3>Foreman stats</h3>
+Serveur installés avec Foreman : {{ count_foreman_host }}
+
+<!--
+{% for post in list_of_name[100:110] %}
+  <li>{{ post }}</li>
+{% endfor %}
+-->
+
+    </div><!-- /.container -->
+{% include 'footer.html' %}
+</body>
+</html>

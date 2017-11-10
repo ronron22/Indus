@@ -1,0 +1,10 @@
+<!doctype html>
+<title>Dashboard Ansible</title>
+{% if all_tasks %}
+    <ul id="all_tasks">
+    <h2> All tasks </h2>
+    {% set all_tasks = all_tasks.split('\n') %}
+        <li><font color="red">{{ all_tasks[1] }}</font></li>
+        <li><font color="red">{{ all_tasks[0] }}</font></li>
+    </ul>
+{% endif %}

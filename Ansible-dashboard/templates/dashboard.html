@@ -1,0 +1,48 @@
+
+{% include 'header.html' %}
+{% include 'menu.html' %}
+
+    <div class="container">
+
+      <div class="starter-template">
+    <h2> Résultat des opérations - {% if server %} pour le serveur {{ server }} {% else %} toutes catégories {% endif %} </h2>
+    {% if nb_operation  %}
+    <h3> Résumé</h3>
+    <ul>
+    {% if my_type  %}
+<li> id de la séquence (_type) : {{ my_type }} </li>
+{% endif %}
+<li><strong>Nombre total de tâches : {{ nb_operation }}</strong></li>
+<li><strong>Nombre de tâches en erreurs : {% if nb_failed %} {{ nb_failed }} {% else %} 0 {% endif %}</strong></li>
+</ul>
+    {% if camenbert  %}
+    <img src="{{ camenbert }}" /> 
+    {% endif %}
+{% endif %}
+{% if nok_tasks %}
+    <ul id="séquences en erreur">
+    <h3> Liste des{% if nb_failed %} {{ nb_failed }} {% endif %} dernières tâches en erreurs </h3>
+    {% for item in nok_tasks %}
+        <li><div style="background-color:#F2A3A3; margin:4px;  padding:1px;">{{ item|safe }}</div></li>
+    {% endfor %}
+    </ul>
+{% endif %}
+{% if all_tasks %}
+    <ul id="50 dernières séquences">
+    <h3> Liste des {% if nb_operation %} {{ nb_operation }} {% endif %} tâches exécutées</h3>
+    {% for item in all_tasks %}
+	    {% if not 'debug' in item %}
+	    {% if 'failed' in item %}
+        <li><div style="background-color:#F2A3A3; margin:4px;  padding:1px;">{{ item|safe }} </div></li>
+        {% else %}
+        <li><div style="background-color:#99D795; margin:4px;  padding:1px;" >{{ item|safe }}</div></li>
+        {% endif %}
+        {% endif %}
+    {% endfor %}
+    </ul>
+{% endif %}
+
+
+    </div><!-- /.container -->
+</body>
+</html>

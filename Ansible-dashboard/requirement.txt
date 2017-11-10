@@ -1,0 +1,7 @@
+elasticsearch
+ansible
+requests
+flask
+httplib2
+GChartWrapper
+redis

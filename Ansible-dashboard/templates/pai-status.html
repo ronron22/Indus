@@ -1,0 +1,43 @@
+{% include 'header.html' %}
+{% include 'menu.html' %}
+
+    <div class="container">
+      <div class="starter-template">
+
+    <h3>Status du système PAI Linux- weather map</h3>
+
+<ul>
+<li><a href="http://scheduler1.ecritel.net:9200/_plugin/head/">Administration d'Elasticsearch</a></li>
+
+
+<li><a href="http://scheduler1.ecritel.net:15672/">Administration de rabbitmq</a></li>
+</ul>
+
+<!--
+<p>Légende:</p>
+    &nbsp;<img src="/static/circle-ok-green.png" />: normalement fonctionnel <br />
+    &nbsp;<img src="/static/warning-3-24.png" />: possible problème<br />
+    <img src="/static/exclamation-circle_red.png" />: non fonctionnel<br />
+<br />
+<br />
+-->
+
+<h4>Services</h4> 
+    <ul>
+    <li><img src="/static/circle-ok-green.png" />Foreman&nbsp;<div id="toto" class="glyphicon glyphicon-plus" style="cursor:pointer"></div><p style="display: none">Pa ni pwoblem</p></li>
+    <li><img src="/static/exclamation-circle_red.png" />Ansible &nbsp;<div id="toto" class="glyphicon glyphicon-plus" style="cursor:pointer"></div> <p style="display: none">non fonctionnel, test paipy</p></li>
+    <li>&nbsp;<img src="/static/circle-ok-green.png" />Calcifer&nbsp;<div id="toto"  class="glyphicon glyphicon-plus" style="cursor:pointer"></div> <p style="display: none">rien à signaler</p></li>
+    <li>&nbsp;<img src="/static/warning-3-24.png" />Configuration repository &nbsp;<div id="toto"  class="glyphicon glyphicon-plus" style="cursor:pointer"></div> <p style="display: none">Apache 2.4 pour Jessie non complet</p></li>
+</ul>
+
+<script type="text/javascript">
+var myvar = "div#toto";
+$( myvar ).click(function() {
+  $( "p" ).toggle();
+}); 
+</script> 
+<br />
+<br />
+    </div><!-- /.container -->
+</body>
+</html>

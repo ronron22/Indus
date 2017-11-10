@@ -1,0 +1,25 @@
+<!doctype html>
+<title>Dashboard Ansible</title>
+{% if all_tasks %}
+    <ul id="all_tasks">
+    <h2> All tasks </h2>
+    {% for key, value in all_tasks.iteritems() %}
+        <li><font color="red">{{ key[value] }}</font></li>
+	    {% if 'failed' in item %}
+            <li><font color="red">{{ item[status] }}</font></li>
+        {% else %}
+            <li><font color="green">{{ item[status] }}</font></li>
+            <li><font color="green">{{ item }}</font></li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+{% endif %}
+{% if nok_tasks %}
+    <ul id="nok_tasks">
+    <h2> nok_tasks </h2>
+    {% for item in nok_tasks %}
+        <li><font color="red">{{ item }}</font></li>
+    {% endfor %}
+    </ul>
+{% endif %}
+
