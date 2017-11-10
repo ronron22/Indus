@@ -1,1 +1,1 @@
-(Sequence fot Paipy)[paipy.png]
+[Sequence for Paipy](paipy.png)
