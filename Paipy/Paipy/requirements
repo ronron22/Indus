@@ -1,0 +1,8 @@
+#
+redis
+logger
+argparse
+requests
+ansible
+coloredlogs
+httplib2
