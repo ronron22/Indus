@@ -2,6 +2,6 @@
 
 ## Technologies 
 * elasticsearch : storing information
-* flash : present information
+* flask : present information
 * jinja : format information
 
